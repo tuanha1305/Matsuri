@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"io/ioutil"
+	"libcore/device"
 	"log"
 	"os"
 	"strings"
@@ -125,6 +126,10 @@ func (lp *logfile) Write(p []byte) (n int, err error) {
 			lp.buf.Reset()
 			lp.buf.Write(data[len(data)-max:])
 		}
+	}
+
+	if device.IsNekoray {
+		os.Stdout.Write(p)
 	}
 
 	//TODO log by entry, show color

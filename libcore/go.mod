@@ -5,6 +5,7 @@ go 1.18
 require (
 	github.com/Dreamacro/clash v1.9.0
 	github.com/golang/protobuf v1.5.2
+	github.com/grpc-ecosystem/go-grpc-middleware v1.0.0
 	github.com/miekg/dns v1.1.48
 	github.com/sagernet/gomobile v0.0.0-20210905032500-701a995ff844
 	github.com/sagernet/libping v0.1.1
@@ -13,6 +14,8 @@ require (
 	github.com/v2fly/v2ray-core/v5 v5.0.0
 	go.uber.org/automaxprocs v1.4.0
 	golang.org/x/sys v0.0.0-20220325203850-36772127a21f
+	google.golang.org/grpc v1.45.0
+	google.golang.org/protobuf v1.28.0
 	gvisor.dev/gvisor v0.0.0
 )
 
@@ -64,8 +67,6 @@ require (
 	golang.zx2c4.com/wintun v0.0.0-20211104114900-415007cec224 // indirect
 	golang.zx2c4.com/wireguard v0.0.0-20211209221555-9c9e7e272434 // indirect
 	google.golang.org/genproto v0.0.0-20211223182754-3ac035c7e7cb // indirect
-	google.golang.org/grpc v1.45.0 // indirect
-	google.golang.org/protobuf v1.28.0 // indirect
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
 	inet.af/netaddr v0.0.0-20211027220019-c74959edd3b6 // indirect
 )

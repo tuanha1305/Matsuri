@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package libcore;
+option go_package = "libcore/nekoray_rpc";
+
+service LibcoreService {
+  rpc Exit(EmptyReq) returns (EmptyResp) {}
+  rpc KeepAlive(EmptyReq) returns (EmptyResp) {}
+  rpc Start(LoadConfigReq) returns (ErrorResp) {}
+  rpc Stop(EmptyReq) returns (ErrorResp) {}
+}
+
+service NekoRayService {
+  // TODO traffic?
+}
+
+message EmptyReq {}
+
+message EmptyResp {}
+
+message ErrorResp {
+  string error = 1;
+}
+
+message LoadConfigReq {
+  string coreConfig = 1;
+}
