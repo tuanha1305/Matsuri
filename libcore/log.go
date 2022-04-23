@@ -9,7 +9,6 @@ import (
 	"os"
 	"strings"
 	"sync"
-	"syscall"
 	"time"
 
 	"github.com/sirupsen/logrus"
@@ -94,14 +93,14 @@ type logfile struct {
 
 func (lp *logfile) lock() {
 	if lp.f != nil {
-		syscall.Flock(int(lp.f.Fd()), syscall.LOCK_EX)
+		device.Flock(int(lp.f.Fd()), device.LOCK_EX)
 	} else {
 		lp.mutex.Lock()
 	}
 }
 func (lp *logfile) unlock() {
 	if lp.f != nil {
-		syscall.Flock(int(lp.f.Fd()), syscall.LOCK_UN)
+		device.Flock(int(lp.f.Fd()), device.LOCK_UN)
 	} else {
 		lp.mutex.Unlock()
 	}
